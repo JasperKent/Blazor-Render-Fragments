@@ -1,0 +1,21 @@
+﻿@typeparam TItem
+
+<h3>Listing Child</h3>
+
+@if(Format is not null)
+{
+    <ul>
+        @foreach(var item in Items)
+        {
+            <li>@Format(item)</li>
+        }
+    </ul>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<TItem> Items { get; set; } = [];
+
+    [Parameter]
+    public RenderFragment<TItem>? Format { get; set; }
+}

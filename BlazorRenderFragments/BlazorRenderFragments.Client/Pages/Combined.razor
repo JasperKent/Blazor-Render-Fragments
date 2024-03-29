@@ -1,0 +1,18 @@
+﻿@page "/combined"
+@rendermode InteractiveAuto
+
+<h3>Combined</h3>
+@_circle(_radius)
+@_circle(_radius / 2)
+
+<br />
+
+<button class="btn btn-primary" @onclick="()=> _radius -= 5">Shrink</button>
+
+@code {
+    private int _radius = 45;
+
+    private RenderFragment<int> _circle = radius => @<svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle r="@radius" cx="50" cy="50" fill="red" />
+                                                     </svg>;
+}

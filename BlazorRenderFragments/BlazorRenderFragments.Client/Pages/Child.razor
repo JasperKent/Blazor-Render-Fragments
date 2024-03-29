@@ -1,0 +1,8 @@
+﻿<h3>Child</h3>
+<div>------------</div>
+@ChildContent
+<div>------------</div>
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

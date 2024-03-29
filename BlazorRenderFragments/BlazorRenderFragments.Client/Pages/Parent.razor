@@ -1,0 +1,26 @@
+﻿@page "/parent"
+@rendermode InteractiveAuto
+
+<h3>Parent</h3>
+
+<Child>
+    <h4>This is a heading.</h4>
+    <p>This is some content.</p>
+</Child>
+
+<ListingChild Items="_names">
+    <Format>
+        <em>@context</em>
+    </Format>
+</ListingChild>
+
+<ListingChild Items="_numbers">
+    <Format>
+        <b>@context</b>
+    </Format>
+</ListingChild>
+
+@code {
+    private string[] _names = ["Thomas", "Richard", "Harriette", "Charlotte"];
+    private int[] _numbers = [1, 2, 3, 4];
+}
